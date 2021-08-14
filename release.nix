@@ -1,9 +1,10 @@
 { }:
 let
+  overlays = import ./overlays.nix;
   nixpkgsSets = import ./.ci/nixpkgs.nix;
   inherit (nixpkgsSets) nixos1809 nixos2003 unstable;
   inherit (nixos2003) lib;
-  inherit (nixos2003.haskell.lib) doJailbreak dontCheck;
+  inherit (nixos2003.haskell.lib) doJailbreak dontCheck overrideCabal;
   commonOverrides = self: super: {
     which = self.callHackageDirect {
       pkg = "which";
@@ -20,5 +21,9 @@ let
       overrides = commonOverrides;
     };
   };
+   whichExecutables = p: with p; [
+     nix
+     nix-prefetch-git
+   ];
 in
-  lib.mapAttrs (_: ghc: ghc.callCabal2nix "cli-nix" ./. {}) ghcs
+  lib.mapAttrs (_: overlays.cli-nix nixos2003) ghcs

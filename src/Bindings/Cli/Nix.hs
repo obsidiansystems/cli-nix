@@ -37,6 +37,9 @@ module Bindings.Cli.Nix
   , rawArg
   , runNixShellConfig
   , strArg
+
+  , nixPrefetchGitPath
+  , nixPrefetchUrlPath
   ) where
 
 import Control.Lens
@@ -53,6 +56,8 @@ import Data.List (intercalate)
 import Data.Maybe
 import Data.Monoid ((<>))
 import qualified Data.Text as T
+
+import System.Which (staticWhich)
 
 import Cli.Extras
 
@@ -236,3 +241,9 @@ nixCmd cmdCfg = withSpinner' (T.unwords $ "Running" : cmd : desc) (Just $ const 
       [ (\x -> ["on", T.pack x]) <$> path
       , (\a -> ["[" <> T.pack a <> "]"]) <$> (commonCfg ^. nixCmdConfig_target . target_attr)
       ]
+
+nixPrefetchGitPath :: FilePath
+nixPrefetchGitPath = $(staticWhich "nix-prefetch-git")
+
+nixPrefetchUrlPath :: FilePath
+nixPrefetchUrlPath = $(staticWhich "nix-prefetch-url")
