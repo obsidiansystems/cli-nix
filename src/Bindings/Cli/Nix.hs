@@ -214,7 +214,7 @@ nixCmd
   :: ( MonadIO m
      , MonadMask m
      , MonadLog Output m
-     , HasCliConfig m
+     , HasCliConfig e m
      , MonadError e m
      , AsProcessFailure e
      , MonadFail m
