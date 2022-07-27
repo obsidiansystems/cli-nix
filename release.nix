@@ -10,12 +10,7 @@ let
       ver = "0.2";
       sha256 = "1g795yq36n7c6ycs7c0799c3cw78ad0cya6lj4x08m0xnfx98znn";
     } {};
-    cli-extras = self.callCabal2nix "cli-extras" (nixos2003.fetchFromGitHub {
-      owner = "obsidiansystems";
-      repo = "cli-extras";
-      rev = "d43786fc6c5856e5f47d7f66c110853adc87dc0f";
-      sha256 = sha256:jZFzNwBQPat3GvwCM1AaRnMbOOMtqCkoCUJTFIDCP8o=;
-    }) {};
+    cli-extras = self.callCabal2nix "cli-extras" (import ./dep/cli-extras/thunk.nix) {};
   };
   ghcs = rec {
     ghc865 = nixos2003.haskell.packages.ghc865.override {
