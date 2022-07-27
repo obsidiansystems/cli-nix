@@ -13,8 +13,8 @@ let
     cli-extras = self.callCabal2nix "cli-extras" (nixos2003.fetchFromGitHub {
       owner = "obsidiansystems";
       repo = "cli-extras";
-      rev = "7a81d23776a1b992005cb74b2934992e03582670";
-      sha256 = sha256:iSo88gSAFkkBf6b1rswF0y/Wd/NeDff9O39L6S7QdgM=;
+      rev = "d43786fc6c5856e5f47d7f66c110853adc87dc0f";
+      sha256 = sha256:jZFzNwBQPat3GvwCM1AaRnMbOOMtqCkoCUJTFIDCP8o=;
     }) {};
   };
   ghcs = rec {
