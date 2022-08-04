@@ -33,7 +33,8 @@ jobs:
         cabal update
         cabal build --only-dependencies --enable-tests --enable-benchmarks
         touch nix-prefetch-git
-        chmod 755 nix-prefetch-git
+        touch nix-prefetch-url
+        chmod 755 nix-prefetch-git nix-prefetch-url
     - name: Build
       run: env PATH=.:$PATH cabal build --enable-tests --enable-benchmarks all
     - name: Run tests
