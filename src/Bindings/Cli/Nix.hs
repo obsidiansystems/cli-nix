@@ -242,8 +242,10 @@ nixCmd cmdCfg = withSpinner' (T.unwords $ "Running" : cmd : desc) (Just $ const 
       , (\a -> ["[" <> T.pack a <> "]"]) <$> (commonCfg ^. nixCmdConfig_target . target_attr)
       ]
 
+-- | Statically determined (at build-time) path to @nix-prefetch-git@.
 nixPrefetchGitPath :: FilePath
 nixPrefetchGitPath = $(staticWhich "nix-prefetch-git")
 
+-- | Statically determined (at build-time) path to @nix-prefetch-url@.
 nixPrefetchUrlPath :: FilePath
 nixPrefetchUrlPath = $(staticWhich "nix-prefetch-url")

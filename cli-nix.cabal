@@ -1,9 +1,9 @@
 cabal-version:      >=1.10
 name:               cli-nix
-version:            0.1.1.0
+version:            0.2.0.0
 license:            BSD3
 license-file:       LICENSE
-copyright:          Obsidian Systems LLC 2020
+copyright:          Obsidian Systems LLC 2020 - 2022
 maintainer:         maintainer@obsidian.systems
 author:             Obsidian Systems LLC
 synopsis:           Bindings to the nix command-line interface
