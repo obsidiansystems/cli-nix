@@ -1,5 +1,13 @@
 # Revision history for cli-nix
 
+## 0.2.0.0 -- Revision 2
+
+* Support GHC 9.10
+
+## 0.2.0.0 -- Revision 1
+
+* Support GHC 9.6
+
 ## 0.2.0.0
 
 * [#2](https://github.com/obsidiansystems/cli-nix) Add static paths for `nix-prefetch-url` and `nix-prefetch-git`.
