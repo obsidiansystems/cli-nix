@@ -46,4 +46,4 @@ jobs:
       run: env PATH=.:$PATH cabal test --enable-tests all
 
     - name: Build Docs
-      run: cabal haddock
+      run: env PATH=.:$PATH cabal haddock
