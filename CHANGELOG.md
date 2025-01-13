@@ -1,5 +1,9 @@
 # Revision history for cli-nix
 
+## 0.2.0.1
+
+* Relax some bounds
+
 ## 0.2.0.0 -- Revision 2
 
 * Support GHC 9.10
