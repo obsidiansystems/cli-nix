@@ -9,7 +9,7 @@ let
     which = self.callHackageDirect {
       pkg = "which";
       ver = "0.2";
-      sha256 = "1g795yq36n7c6ycs7c0799c3cw78ad0cya6lj4x08m0xnfx98znn";
+      sha256 = "sha256-1n6UurMdVAQ6kdQoz0BT6HA2WEoHsKOZN+xYM7Av6bw=";
     } {};
     cli-extras = self.callCabal2nix "cli-extras" (import ./dep/cli-extras/thunk.nix) {};
   };
